@@ -1,0 +1,23 @@
+/* || DOCUMENT */
+
+body {
+    --width: 28rem;
+    --padding-block: 2rem;
+    --padding-inline: max(1rem, (100vw - var(--width)) / 2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    min-height: 100vh;
+    padding: var(--padding-block) var(--padding-inline);
+    background-color: hsl(0, 0%, 93%);
+}
+
+/* || MEDIA QUERIES */
+
+@media (min-width: 48rem) {
+    body {
+        --padding-block: 4rem;
+    }
+}
