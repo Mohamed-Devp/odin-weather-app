@@ -16,6 +16,16 @@ class PubSub {
 
         return id;
     }
+
+    unsubscribe(event, id) {
+        if (!this.events[event]) return false;
+
+        this.events[event] = this.events[event].filter((sub) => {
+            return sub.id !== id;
+        });
+
+        return true;
+    }
 }
 
 export default new PubSub();
