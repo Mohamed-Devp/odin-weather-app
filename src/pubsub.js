@@ -26,6 +26,16 @@ class PubSub {
 
         return true;
     }
+
+    publish(event, data) {
+        if (!this.events[event]) return false;
+
+        this.events[event].forEach((sub) => {
+            sub.callback(data);
+        });
+
+        return true;
+    }
 }
 
 export default new PubSub();
