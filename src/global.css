@@ -41,3 +41,12 @@ ol {
 a {
     text-decoration: none;
 }
+
+/* || CUSTOM PROPERTIES */
+
+:root {
+    /* Colors */
+    --white: hsl(0, 100%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --dark-grey: hsl(0, 0%, 36%);
+}
