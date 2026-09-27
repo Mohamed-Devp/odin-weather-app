@@ -43,5 +43,20 @@ export default function createSearchForm() {
         pubsub.publish("weather-data-fetched", data);
     };
 
+    const onSearchFormSubmit = (e) => {
+        e.preventDefault();
+
+        const location = searchField.value;
+        if (location.length > 0) {
+            searchForm.reset();
+
+            fetchWeatherData(location).catch((error) => {
+                console.error(error);
+            });
+        }
+    };
+
+    searchForm.addEventListener("submit", onSearchFormSubmit);
+
     return searchForm;
 }
