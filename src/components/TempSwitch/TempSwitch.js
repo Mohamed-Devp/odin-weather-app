@@ -3,13 +3,13 @@ import "./TempSwitch.css";
 import pubsub from "../../pubsub.js";
 import { createElement } from "../../utils.js";
 
-export default function createTempSwitch() {
+export default function createTempSwitch(selectedUnit) {
     const tempSwitch = createElement("button", {
         className: "temp-switch",
-        text: "°F",
+        text: selectedUnit === "celsius" ? "°F" : "°C",
         attrs: {
             role: "switch",
-            "aria-checked": "false",
+            "aria-checked": String(selectedUnit === "fahrenheit"),
             "aria-label": "Fahrenheit (°F)",
         },
     });

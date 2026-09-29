@@ -25,7 +25,7 @@ const icons = {
         import("@meteocons/svg-static/fill/overcast-night.svg?raw"),
 };
 
-function createWeatherCardHeader(location, date) {
+function createWeatherCardHeader(tempUnit, location, date) {
     const info = createElement("div", {
         className: "weather-card__info",
         children: [
@@ -42,7 +42,7 @@ function createWeatherCardHeader(location, date) {
 
     const header = createElement("div", {
         className: "weather-card__header",
-        children: [info, createTempSwitch()],
+        children: [info, createTempSwitch(tempUnit)],
     });
 
     return header;
@@ -112,20 +112,14 @@ function createWeatherCardElements(windSpeed, humidity, precip) {
     return elements;
 }
 
-export default function createWeatherCard({
-    location,
-    date,
-    icon,
-    conditions,
-    temp,
-    windSpeed,
-    humidity,
-    precip,
-}) {
+export default function createWeatherCard(
+    tempUnit,
+    { location, date, icon, conditions, temp, windSpeed, humidity, precip },
+) {
     const weatherCard = createElement("article", {
         className: "weather-card",
         children: [
-            createWeatherCardHeader(location, date),
+            createWeatherCardHeader(tempUnit, location, date),
             createWeatherCardSummary(icon, conditions, temp),
             createWeatherCardElements(windSpeed, humidity, precip),
         ],
