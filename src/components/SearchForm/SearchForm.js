@@ -30,7 +30,7 @@ export default function createSearchForm() {
         const baseURL =
             "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline";
 
-        const parameters = `?key=${API_KEY}&elements=datetime,temp,humidity,precip,windspeed&unitGroup=metric`;
+        const parameters = `?key=${API_KEY}&include=current&unitGroup=metric`;
 
         const response = await fetch(`${baseURL}/${location}${parameters}`);
 
