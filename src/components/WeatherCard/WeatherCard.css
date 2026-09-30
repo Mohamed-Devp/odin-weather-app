@@ -15,6 +15,10 @@
     align-items: center;
 }
 
+.weather-card__info {
+    max-width: 75%;
+}
+
 .weather-card__location {
     font-size: 1.25rem;
     font-weight: 600;
