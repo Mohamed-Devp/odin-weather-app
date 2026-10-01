@@ -1,0 +1,13 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.main__msg {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--dark-grey);
+}
